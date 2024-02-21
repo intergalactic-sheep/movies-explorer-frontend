@@ -1,0 +1,169 @@
+.techs {
+  width: 100%;
+  margin: 0 auto 110px auto;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(39, 39, 39, 1);
+}
+
+.techs__util-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.techs__title {
+  margin: 0 0 23px 0;
+  padding: 0;
+  font-size: 22px;
+  font-weight: normal;
+  line-height: 26.63px;
+  letter-spacing: -1px;
+}
+
+.techs__line {
+  max-width: 1140px;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(218, 218, 218, 1);
+  margin: 0 auto 90px auto;
+}
+
+.techs__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.techs__subtitle {
+  margin: 0 auto 26px auto;
+  padding: 0;
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 58px;
+  letter-spacing: -1.7px;
+}
+
+.techs__description {
+  max-width: 460px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  letter-spacing: -0.7px;
+  text-align: center;
+  margin: 0 auto 100px auto;
+  padding: 0;
+}
+
+.techs__card-container {
+  display: flex;
+  margin: 0 auto;
+}
+
+.techs__card {
+  width: 90px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px 0 0;
+  background-color: rgba(48, 48, 48, 1);
+  border-radius: 10px;
+}
+
+.techs__card:last-of-type {
+  margin-right: 0;
+}
+
+.techs__tool {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 16.94px;
+}
+
+@media screen and (max-width: 1180px) {
+  .techs {
+    padding: 90px 0;
+    margin: 0 auto 90px auto;
+  }
+
+  .techs__util-container {
+    max-width: 668px;
+  }
+
+  .techs__title {
+    margin-bottom: 20px;
+  }
+
+  .techs__line {
+    max-width: 668px;
+    width: 100%;
+    margin: 0 auto 80px;
+  }
+
+  .techs__subtitle {
+    margin: 0 auto 23px auto;
+  }
+
+  .techs__description {
+    max-width: 420px;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 auto 80px auto;
+  }
+
+  .techs__card {
+    width: 84px;
+    height: 57px;
+    display: flex;
+  }
+
+  .techs__tool {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+}
+
+@media screen and (max-width: 763px) {
+  .techs {
+    background-color: inherit;
+    padding: 70px 0 45px 0;
+  }
+
+  .techs__util-container {
+    max-width: 284px;
+  }
+
+  .techs__title {
+    font-size: 18px;
+    line-height: 21.78px;
+    margin-bottom: 28px;
+  }
+
+  .techs__line {
+    background-color: rgba(0, 0, 0, 1);
+    margin-bottom: 60px;
+  }
+
+  .techs__subtitle {
+    font-size: 30px;
+    line-height: 36.31px;
+  }
+
+  .techs__description {
+    margin-bottom: 47px;
+  }
+
+  .techs__card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .techs__card {
+    margin: 0;
+  }
+}

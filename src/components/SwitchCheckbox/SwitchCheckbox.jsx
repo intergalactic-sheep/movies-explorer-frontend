@@ -2,8 +2,8 @@ import "./SwitchCheckbox.css";
 
 export default function SwitchCheckbox() {
   return (
-    <section className="switch__container">
-      <label className="switch">
+    <section className="switch">
+      <label className="switch__label">
         <input type="checkbox" className="switch__input" />
         <span className="switch__slider" />
       </label>

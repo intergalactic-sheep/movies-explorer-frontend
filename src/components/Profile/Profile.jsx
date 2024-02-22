@@ -1,11 +1,11 @@
 import "./Profile.css";
 
-export default function Profile() {
+export default function Profile({ onLogout }) {
   return (
     <section className="profile">
       <h1 className="profile__title">Привет, Виталий!</h1>
       <form className="profile__form">
-        <label className="profile__form-label" type="name">
+        <label className="profile__form-label">
           <span className="profile__form-span">Имя</span>
           <input
             className="profile__form-input"
@@ -19,8 +19,7 @@ export default function Profile() {
             value="Виталий"
           />
         </label>
-        <div className="profile__form-line"></div>
-        <label className="profile__form-label" type="name">
+        <label className="profile__form-label">
           <span className="profile__form-span">E-mail</span>
           <input
             className="profile__form-input"
@@ -34,7 +33,7 @@ export default function Profile() {
         </label>
         <div className="profile__buttons-container">
           <button className="profile__edit-button">Редактировать</button>
-          <button className="profile__logout-button">Выйти из аккаунта</button>
+          <button className="profile__logout-button" onClick={onLogout}>Выйти из аккаунта</button>
         </div>
       </form>
     </section>

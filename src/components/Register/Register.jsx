@@ -19,6 +19,8 @@ export default function Register() {
               type="text"
               required
               placeholder="Введите имя"
+              minLength={2}
+              maxLength={30}
             />
           </label>
           <label className="register__label">

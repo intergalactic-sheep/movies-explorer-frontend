@@ -27,6 +27,12 @@
   font-size: 14px;
   font-weight: normal;
   line-height: 16.94px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.not-found__link:hover {
+  opacity: .7;
 }
 
 @media screen and (max-width: 763px) {

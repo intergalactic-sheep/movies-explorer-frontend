@@ -5,7 +5,6 @@ export default function AboutProjects() {
     <section className="about-projects">
       <a name="about-project"></a>
       <h2 className="about-projects__title">О проекте</h2>
-      <span className="about-projects__line"></span>
       <div className="about-projects__container">
         <article className="about-projects__paragraph">
           <h3 className="about-projects__subtitle">

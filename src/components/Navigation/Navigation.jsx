@@ -9,23 +9,23 @@ function Navigation({ isLoggedIn }) {
   const path = useLocation();
 
   return (
-    <>
+    <div className='navigation'>
       {!isLoggedIn ? (
-        <div className="navigation__log-buttons">
-          <Link to="/signup">
-            <button className="navigation__register">Регистрация</button>
+        <nav className='navigation__log-buttons'>
+          <Link to='/signup'>
+            <button className='navigation__register'>Регистрация</button>
           </Link>
           <Link to='/signin'>
-          <button className="navigation__login">Войти</button>
+            <button className='navigation__login'>Войти</button>
           </Link>
-        </div>
+        </nav>
       ) : isMobile ? (
         <BurgerMenu />
       ) : (
         <>
-          <div className="navigation__films">
+          <div className='navigation__films'>
             <Link
-              to="/movies"
+              to='/movies'
               className={`navigation__film-item navigation__all-films${
                 path === "/movies" ? " navigation__film-item_type_active" : ""
               }`}
@@ -33,7 +33,7 @@ function Navigation({ isLoggedIn }) {
               Фильмы
             </Link>
             <Link
-              to="/saved-movies"
+              to='/saved-movies'
               className={`navigation__film-item navigation__all-films${
                 path === "/saved-movies"
                   ? " navigation__film-item_type_active"
@@ -43,12 +43,12 @@ function Navigation({ isLoggedIn }) {
               Сохраненные фильмы
             </Link>
           </div>
-          <Link to="/profile">
-            <button className="navigation__user-button">Аккаунт</button>
+          <Link to='/profile' className='navigation__user-button'>
+            Аккаунт
           </Link>
         </>
       )}
-    </>
+    </div>
   );
 }
 

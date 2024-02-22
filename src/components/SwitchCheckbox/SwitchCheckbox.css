@@ -1,13 +1,18 @@
-.switch__container {
+.switch {
   display: flex;
   margin-bottom: 40px;
 }
 
-.switch {
+.switch__label {
   position: relative;
   display: inline-block;
   width: 34px;
   height: 14px;
+  transition: all .3s;
+}
+
+.switch__label:hover {
+  opacity: .8;
 }
 
 .switch__input {
@@ -59,5 +64,10 @@
 @media screen and (max-width: 763px) {
   .switch__container {
     margin-bottom: 38px;
+  }
+
+  .switch__description {
+    margin: 0 0 0 13px;
+    font-size: 11px;
   }
 }

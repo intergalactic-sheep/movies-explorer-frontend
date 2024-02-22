@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0 70px 125px 70px;
+  margin: 0 70px 107px 70px;
 }
 
 .portfolio__title {
@@ -15,9 +15,35 @@
   line-height: 20px;
 }
 
+.portfolio__links {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
 .portfolio__link-container {
   display: flex;
   margin: 0 0 20px 0;
+  width: 100%;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.portfolio__link-container::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 69px;
+  left: 0;
+  right: 0;
+  background-color: rgba(66, 66, 66, 1);
+}
+
+.portfolio__link-container:last-of-type::after {
+  display: none;
 }
 
 .portfolio__link {
@@ -28,11 +54,12 @@
   color: white;
   margin: 0 auto 0 0;
   transition: all .3s;
+  letter-spacing: -1.2px;
 }
 
 .portfolio__button {
-  width: 20px;
-  height: 40px;
+  width: 17px;
+  height: 37px;
   margin: 7px 5px 0 0;
   background-color: transparent;
   border: none;
@@ -48,43 +75,47 @@
   opacity: 0.8;
 }
 
-.portfolio__line {
-  height: 1px;
-  width: 100%;
-  margin-bottom: 19px;
-  background-color: rgba(66, 66, 66, 1);
-}
-
 @media screen and (max-width: 1180px) {
   .portfolio {
     max-width: 668px;
-    margin: 0 50px 90px 50px;
+    margin: 0 50px 70px 50px;
   }
 
   .portfolio__link {
     font-size: 28px;
-    letter-spacing: -1px;
+    letter-spacing: -1.1px;
+  }
+
+  .portfolio__button {
+    margin: 9px 5px 0 0;
   }
 }
 
 @media screen and (max-width: 763px) {
   .portfolio {
     max-width: 292px;
-    margin: 0 14px 70px 14px;
+    margin: 0 14px 50px 14px;
   }
 
   .portfolio__title {
     margin: 0 0 40px 0;
+    font-size: 14px;
+    line-height: 20px;
   }
 
   .portfolio__link-container {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+  }
+
+  .portfolio__link-container::after {
+    top: 47px
   }
 
   .portfolio__link {
     font-size: 18px;
     font-weight: normal;
     line-height: 28px;
+    letter-spacing: -0.7px;
   }
 
   .portfolio__button {

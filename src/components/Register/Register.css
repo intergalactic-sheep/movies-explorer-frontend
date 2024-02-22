@@ -62,6 +62,12 @@
   font-weight: normal;
   line-height: 46px;
   outline: none;
+  border-radius: 8px;
+  transition: all .3s;
+}
+
+.register__input:focus {
+  outline: 1px solid rgba(61, 220, 132, 1);
 }
 
 .register__submit {
@@ -75,6 +81,12 @@
   font-weight: normal;
   line-height: 45px;
   text-align: center;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.register__submit:hover {
+  opacity: .8;
 }
 
 .register__to-login {
@@ -88,6 +100,12 @@
 .register__link {
   color: rgba(66, 133, 244, 1);
   text-decoration: none;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.register__link:hover {
+  opacity: .7;
 }
 
 @media screen and (max-width: 763px) {

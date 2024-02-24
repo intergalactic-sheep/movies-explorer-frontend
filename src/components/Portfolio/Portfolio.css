@@ -1,0 +1,126 @@
+.portfolio {
+  max-width: 1140px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 70px 107px 70px;
+}
+
+.portfolio__title {
+  margin: 0 0 50px 0;
+  padding: 0;
+  color: rgba(139, 139, 139, 1);
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+.portfolio__links {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio__link-container {
+  display: flex;
+  margin: 0 0 20px 0;
+  width: 100%;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.portfolio__link-container::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 69px;
+  left: 0;
+  right: 0;
+  background-color: rgba(66, 66, 66, 1);
+}
+
+.portfolio__link-container:last-of-type::after {
+  display: none;
+}
+
+.portfolio__link {
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 50px;
+  text-decoration: none;
+  color: white;
+  margin: 0 auto 0 0;
+  transition: all .3s;
+  letter-spacing: -1.2px;
+}
+
+.portfolio__button {
+  width: 17px;
+  height: 37px;
+  margin: 7px 5px 0 0;
+  background-color: transparent;
+  border: none;
+  background-image: url('../../images/link_arrow.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: all .3s;
+}
+
+.portfolio__link-container:hover .portfolio__link,
+.portfolio__link-container:hover .portfolio__button {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1180px) {
+  .portfolio {
+    max-width: 668px;
+    margin: 0 50px 70px 50px;
+  }
+
+  .portfolio__link {
+    font-size: 28px;
+    letter-spacing: -1.1px;
+  }
+
+  .portfolio__button {
+    margin: 9px 5px 0 0;
+  }
+}
+
+@media screen and (max-width: 763px) {
+  .portfolio {
+    max-width: 292px;
+    margin: 0 14px 50px 14px;
+  }
+
+  .portfolio__title {
+    margin: 0 0 40px 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .portfolio__link-container {
+    margin-bottom: 40px;
+  }
+
+  .portfolio__link-container::after {
+    top: 47px
+  }
+
+  .portfolio__link {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 28px;
+    letter-spacing: -0.7px;
+  }
+
+  .portfolio__button {
+    width: 10px;
+    height: 26px;
+    margin: 0 4px 0 0;
+  }
+}

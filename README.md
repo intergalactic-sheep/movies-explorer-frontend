@@ -1,2 +1,1 @@
-# movies-explorer-frontend
-React Frontend for Movies Explorer website
+Название макета — dark-2.

@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  min-height: calc(100vh - 618px);
   margin: 70px auto 100px auto;
 }
 
@@ -14,6 +15,10 @@
   column-gap: 30px;
   margin: 0 auto 105px auto;
   padding: 0;
+}
+
+.card-list__error {
+  font-size: 20px;
 }
 
 .card-list__more {
@@ -36,6 +41,7 @@
 @media screen and (max-width: 1180px) {
   .card-list {
     margin: 70px auto 98px auto;
+    min-height: calc(100vh - 639px);
   }
 
   .card-list__grid {
@@ -43,11 +49,16 @@
     row-gap: 45px;
     margin-bottom: 60px;
   }
+
+  .card-list__error {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 763px) {
   .card-list {
     margin: 40px auto 100px auto;
+    min-height: calc(100vh - 689px);
   }
 
   .card-list__grid {
@@ -55,6 +66,10 @@
     row-gap: 40px;
     column-gap: 0;
     margin-bottom: 65px;
+  }
+
+  .card-list__error {
+    font-size: 14px;
   }
 
   .card-list__more {

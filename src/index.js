@@ -4,12 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./components/App/App.jsx";
 import "./vendor/normalize.css";
 import "./vendor/fonts/fonts.css";
+import { MoviesProvider } from "./contexts/MoviesContext.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter>
+      <MoviesProvider>
+        <App />
+      </MoviesProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
 );

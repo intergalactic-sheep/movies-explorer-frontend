@@ -43,7 +43,7 @@
 }
 
 .search-form__input:focus {
-  outline: 1px solid rgba(43, 224, 128, 1);
+  outline: none;
 }
 
 .search-form__submit {

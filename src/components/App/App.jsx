@@ -55,6 +55,23 @@ function App() {
   const path = useLocation().pathname;
   const navigate = useNavigate();
 
+  // PAGE STARTUP
+  useEffect(() => {
+    if (!token) {
+      setIsLoading(false);
+      return;
+    }
+    api.setAuthHeaders(token);
+    api
+      .getUserInfo()
+      .then((userData) => {
+        setCurrentUser(userData);
+        setIsLoggedIn(true);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => setIsLoading(false));
+  }, [token, isLoggedIn]);
+
   useEffect(() => {
     if (isLoggedIn) {
       Promise.all([api.getUserInfo(), api.getSavedMovies()])
@@ -71,24 +88,11 @@ function App() {
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
-    setToken(jwt);
-  }, []);
-
-  useEffect(() => {
-    if (!token) {
-      setIsLoading(false);
-      return;
+    if (jwt) {
+      setToken(jwt);
+      setIsLoggedIn(true);
     }
-    api.setAuthHeaders(token);
-    api
-      .getUserInfo()
-      .then((userData) => {
-        setCurrentUser(userData);
-        setIsLoggedIn(true);
-        navigate("/movies");
-      })
-      .catch((err) => console.log(err));
-  }, [isLoggedIn, token]);
+  }, []);
 
   useEffect(() => {
     getAllMovies()
@@ -168,6 +172,7 @@ function App() {
         status: false,
         message: "Что-то пошло не так! Попробуйте еще раз!",
       });
+      console.log(err);
     }
   };
 
@@ -187,11 +192,12 @@ function App() {
     });
   };
 
+  //MOVIE INTERACTION
   const saveMovie = (movie) => {
     api
       .saveMovie(movie)
       .then((movie) => {
-        setSavedMovies([...savedMovies, movie]);
+        setSavedMovies((savedMovies) => [...savedMovies, movie]);
       })
       .catch((err) => console.log(err));
   };
@@ -199,14 +205,16 @@ function App() {
   const unsaveMovie = (movie) => {
     const movieId =
       movie._id || savedMovies.find((i) => i.movieId === movie.movieId)._id;
-    api.deleteSavedMovie(movieId).then(() =>
-      setSavedMovies((savedMovies) => {
-        const updatedSavedMovies = savedMovies.filter(
-          (savedMovie) => savedMovie.id !== movieId,
-        );
-        return updatedSavedMovies;
-      }),
-    );
+    api
+      .deleteSavedMovie(movieId)
+      .then(() => {
+        setSavedMovies((previouslySavedMovies) => {
+          return previouslySavedMovies.filter(
+            (savedMovie) => savedMovie._id !== movieId,
+          );
+        });
+      })
+      .catch((err) => console.log(err));
   };
 
   const goBack = () => {
@@ -230,10 +238,7 @@ function App() {
               path='/signup'
               element={<Register onRegister={handleRegister} />}
             />
-            <Route
-              path='/'
-              element={<ProtectedRoute loggedIn={isLoggedIn} element={Main} />}
-            />
+            <Route path='/' element={<Main />} />
             <Route
               path='/movies'
               element={

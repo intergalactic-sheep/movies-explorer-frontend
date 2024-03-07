@@ -2,6 +2,11 @@ import MovieCard from "../MoviesCard/MovieCard";
 import "./MoviesCardList.css";
 import useResize from "../../hooks/useResize";
 import { useState } from "react";
+import {
+  ADDED_MOVIES_AMOUNT,
+  MOVIES_AMOUNT,
+  SCREEN_SIZE,
+} from "../../utils/constants";
 
 export default function MoviesCardList({
   movies,
@@ -10,29 +15,29 @@ export default function MoviesCardList({
   shortFilm,
   onSave,
   onUnsave,
-  checkSavedMovies
+  checkSavedMovies,
 }) {
   const width = useResize();
   const [cards, setCards] = useState(getInitialCardsCount());
 
   function getInitialCardsCount() {
-    if (width >= 1280) {
-      return 12;
-    } else if (width <= 1180) {
-      return 8;
-    } else if (width < 767) {
-      return 5;
+    if (width >= SCREEN_SIZE.L) {
+      return MOVIES_AMOUNT.L;
+    } else if (width <= SCREEN_SIZE.m) {
+      return MOVIES_AMOUNT.m;
+    } else if (width < SCREEN_SIZE.S) {
+      return MOVIES_AMOUNT.s;
     }
   }
 
   const handleCardAddition = () => {
     let newVisibleCards;
-    if (width >= 1280) {
-      newVisibleCards = cards + 3;
-    } else if (width <= 1180) {
-      newVisibleCards = cards + 2;
-    } else if (width < 767) {
-      newVisibleCards = cards + 2;
+    if (width >= SCREEN_SIZE.L) {
+      newVisibleCards = cards + ADDED_MOVIES_AMOUNT.L;
+    } else if (width <= SCREEN_SIZE.M) {
+      newVisibleCards = cards + ADDED_MOVIES_AMOUNT.M;
+    } else if (width < SCREEN_SIZE.S) {
+      newVisibleCards = cards + ADDED_MOVIES_AMOUNT.S;
     }
 
     setCards(newVisibleCards);

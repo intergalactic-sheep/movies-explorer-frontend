@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import "./Profile.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import useFormWithValidation from "../../hooks/useFormWithValidation";
@@ -44,6 +44,7 @@ export default function Profile({ onLogout, onUpdate }) {
         name='profile'
         noValidate
         onSubmit={handleSubmit}
+        autoComplete="off"
       >
         <label className='profile__form-label' htmlFor='name'>
           <span className='profile__form-span'>Имя</span>

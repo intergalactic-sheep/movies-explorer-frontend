@@ -1,6 +1,5 @@
 import "./MovieCard.css";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
 
 export default function MovieCard({
   movie,
@@ -9,17 +8,14 @@ export default function MovieCard({
   checkSavedMovies,
 }) {
   const path = useLocation().pathname;
-  const [isSaved, setIsSaved] = useState(checkSavedMovies(movie));
+  const isSaved = checkSavedMovies(movie);
 
   const handleSaveClick = () => {
     onSave(movie);
-    setIsSaved(true);
   };
 
   const handleUnsaveClick = () => {
     onUnsave(movie);
-    setIsSaved(false);
-    checkSavedMovies(movie);
   };
 
   const calculateMovieDuration = () => {

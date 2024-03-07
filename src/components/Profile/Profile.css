@@ -43,7 +43,7 @@
 }
 
 .profile__form-input {
-  display: inline-block;
+  width: 300px;
   background-color: transparent;
   color: white;
   border: none;
@@ -106,6 +106,11 @@
 
 .profile__edit-button:hover {
   opacity: .7;
+}
+
+.profile__edit-button:disabled {
+  opacity: .3;
+  cursor: auto;
 }
 
 .profile__logout-button {

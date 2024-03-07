@@ -18,6 +18,14 @@ const handleChange = (evt) => {
     if (input.validity.valueMissing) {
       validationMessage = "Поле обязательно к заполнению."
     }
+    
+    if (input.validity.tooShort) {
+      validationMessage = "Минимальное количество символов: 2."
+    }
+
+    if (input.validity.tooLong) {
+      validationMessage = "Максимальное количество символов: 30."
+    }
 
     if (name === "email") {
         if (!isEmail(value)) {

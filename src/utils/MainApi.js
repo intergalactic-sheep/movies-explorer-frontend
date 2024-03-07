@@ -1,4 +1,4 @@
-import { configApi } from "./constants";
+import { CONFIG_API } from "./constants";
 
 class Api {
   constructor(config) {
@@ -98,5 +98,5 @@ class Api {
   }
 }
 
-const api = new Api(configApi);
+const api = new Api(CONFIG_API);
 export default api;

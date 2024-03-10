@@ -14,7 +14,7 @@ const SCREEN_SIZE = {
 const MOVIES_AMOUNT = {
   S: 5,
   M: 8,
-  L: 16,
+  L: 12,
 };
 
 const ADDED_MOVIES_AMOUNT = {

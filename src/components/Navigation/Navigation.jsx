@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 
 function Navigation({ isLoggedIn }) {
   const isMobile = useMediaQuery({ query: `(max-width: 1180px)` });
-  const path = useLocation();
+  const path = useLocation().pathname;
 
   return (
     <div className='navigation'>

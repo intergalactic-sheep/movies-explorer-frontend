@@ -1,3 +1,4 @@
+import './SavedMovies.css';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import { getAllMovies } from "../../utils/MoviesApi";

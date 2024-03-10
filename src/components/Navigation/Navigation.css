@@ -26,7 +26,7 @@
 }
 
 .navigation__film-item_type_active {
-  font-weight: 500;
+  color: rgba(61, 220, 132, 1);
 }
 
 .navigation__user-button {

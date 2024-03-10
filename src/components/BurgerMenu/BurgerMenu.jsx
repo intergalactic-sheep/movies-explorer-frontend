@@ -4,7 +4,7 @@ import "./BurgerMenu.css";
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const path = useLocation();
+  const path = useLocation().pathname;
 
   useEffect(() => {
     const body = document.body;
@@ -48,14 +48,14 @@ const BurgerMenu = () => {
           <ul className='burger-menu__list'>
             <li
               className={`burger-menu__item${
-                path.pathname === "/" ? " burger-menu__item_type_active" : ""
+                path === "/" ? " burger-menu__item_type_active" : ""
               }`}
             >
               <Link to='/'>Главная</Link>
             </li>
             <li
               className={`burger-menu__item${
-                path.pathname === "/movies"
+                path === "/movies"
                   ? " burger-menu__item_type_active"
                   : ""
               }`}
@@ -64,7 +64,7 @@ const BurgerMenu = () => {
             </li>
             <li
               className={`burger-menu__item${
-                path.pathname === "/saved-movies"
+                path === "/saved-movies"
                   ? " burger-menu__item_type_active"
                   : ""
               }`}

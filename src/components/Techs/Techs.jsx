@@ -20,7 +20,7 @@ export default function Techs() {
               <p className='techs__tool'>CSS</p>
             </li>
             <li className='techs__card'>
-              <p className='techs__tool'>JS</p>
+              <p className='techs__tool'>JavaScript</p>
             </li>
             <li className='techs__card'>
               <p className='techs__tool'>React</p>

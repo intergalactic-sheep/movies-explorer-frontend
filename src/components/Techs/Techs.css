@@ -73,10 +73,16 @@
   margin: 0 10px 0 0;
   background-color: rgba(48, 48, 48, 1);
   border-radius: 10px;
+  transition: all .3s ease-out;
 }
 
 .techs__card:last-of-type {
   margin-right: 0;
+}
+
+.techs__card:before {
+  content: '';
+  transition: all .3s ease-out;
 }
 
 .techs__tool {
@@ -85,6 +91,7 @@
   font-size: 14px;
   font-weight: normal;
   line-height: 16.94px;
+  transition: all .3s ease-out;
 }
 
 @media screen and (max-width: 1180px) {

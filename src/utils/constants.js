@@ -20,7 +20,7 @@ const MOVIES_AMOUNT = {
 const ADDED_MOVIES_AMOUNT = {
   S: 1,
   M: 2,
-  L: 4,
+  L: 3,
 };
 
 export {

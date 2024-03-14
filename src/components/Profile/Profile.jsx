@@ -59,7 +59,7 @@ export default function Profile({ onLogout, onUpdate }) {
             minLength='2'
             maxLength='30'
             placeholder='Введите имя'
-            pattern={"^[а-яА-Яa-zA-Z0-9]+$"}
+            pattern={"^[а-яА-Яa-zA-Z0-9\\s]+$"}
             value={values.name}
             onChange={handleChange}
           />
